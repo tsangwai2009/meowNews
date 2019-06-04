@@ -1,21 +1,60 @@
-/**index.wxss**/
-.userinfo {
+/* pages/detail/detail.wxss */
+.swiper-tab{
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 88rpx;
+    font-size: 36rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background:rgba(18, 117, 199, 0.856);
+}
+.swiper-tab-item{
+    width: 30%; 
+    color:rgba(233, 233, 233, 0.5);
+}
+.active{
+    color:#FFF;
+    border-bottom: 4rpx solid #FFF;
+    font-size: 40rpx;
+    line-height: 80rpx;
+}
+.news-title{
+  text-align: left;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}
+.news-item{
+  height: 170rpx;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  margin: 10rpx 40rpx;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0.85;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.news-wrapper{
+  flex-grow:1;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.news-date{
+  text-align: left;
+  flex-grow:1;
 }
-
-.usermotto {
-  margin-top: 200px;
+.news-content
+{
+  display: flex;
+  opacity: 0.6;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  margin-right: 40rpx;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
 }
+.news-photo{
+  width: 200rpx;
+  height: 140rpx;
+} 
+.news-item:last-child
+{border-bottom: none;}

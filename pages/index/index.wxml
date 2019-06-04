@@ -1,13 +1,107 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<!--pages/detail/detail.wxml-->
+
+<view class="swiper-tab">
+    <view  wx:for="{{tabs}}" class="swiper-tab-item {{currentTab==idx?'active':''}}" data-current="{{idx}}" bindtap="clickTab"  wx:key="*this" wx:for-index="idx" wx:for-item="tab">{{tab.kind}}</view>
 </view>
+
+<swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab" style="height: {{clientHeight?clientHeight+'px':'auto'}}; text-align: center;">
+    <swiper-item><!--國內-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemGn}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item><!--國際-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemGj}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item><!--財經-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemCj}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item><!--娛樂-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemYl}}" data-id="{{item.id}}" bindtap="newsDetail">
+           <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item><!--軍事-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemJs}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+        <swiper-item><!--體育-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemTy}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item><!--其他-->
+      <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="news-item" wx:for="{{newsItemOther}}" data-id="{{item.id}}" bindtap="newsDetail">
+          <view class="news-wrapper">
+            <view class="news-title">{{item.title}}</view> 
+            <view class="news-content">
+              <view class="news-date">{{item.date}}</view> 
+              <view class="news-source">{{item.source}}</view> 
+            </view>
+          </view>
+          <image class='news-photo' src='{{item.firstImage}}'></image>
+        </view>
+      </scroll-view>
+    </swiper-item>
+</swiper>
+

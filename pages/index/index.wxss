@@ -21,13 +21,40 @@
     font-size: 40rpx;
     line-height: 80rpx;
 }
-
+.news-title{
+  text-align: left;
+  margin-right: 30rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}
 .news-item{
+  height: 170rpx;
   display: flex;
-  margin: 0 40rpx;
   align-items: center;
+  margin: 10rpx 40rpx;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0.85;
 }
+.news-wrapper{
+  flex-grow:1;
+}
+.news-date{
+  text-align: left;
+  flex-grow:1;
+}
+.news-content
+{
+  display: flex;
+  opacity: 0.6;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  margin-right: 40rpx;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
+}
+.news-photo{
+  width: 200rpx;
+  height: 140rpx;
+} 
 .news-item:last-child
 {border-bottom: none;}

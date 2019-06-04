@@ -1,0 +1,13 @@
+<view class="detail">
+  <view class="detail-title">{{title}}</view>
+  <view class="detail-describe">
+    <view class="detail-time">{{time}}</view>
+    <view class="detail-source">{{source}}</view>
+    <view class="detail-view">{{view}}</view>
+  </view>
+  <view class="detail-content" wx:for="{{detailItem}}">
+    <view wx:if="{{item.type=='p'}}" class="detail-p">{{item.text}}</view>
+    <view wx:if="{{item.type=='strong'}}" class="detail-strong">{{item.text}}</view>
+    <image wx:if="{{item.type=='image'}}" class="detail-image" mode="aspectFit" src="{{item.photo}}"></image>
+  </view>
+</view>

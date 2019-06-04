@@ -11,8 +11,8 @@
 .detail-describe{
   color:rgba(80, 80, 80, 0.527);
   margin-top: 20rpx;
-  font-size: 20rpx;
-  line-height: 28rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
   display: flex;
   margin-bottom: 60rpx;
 }

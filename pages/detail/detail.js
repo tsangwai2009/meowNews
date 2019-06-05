@@ -18,6 +18,7 @@ Page({
   onPullDownRefresh() {
     this.getDetail(() => { wx.stopPullDownRefresh(); });
   },
+  //request for news detail
   getDetail(callback)
   {
     wx.request({
@@ -33,6 +34,7 @@ Page({
       complete: () => { callback && callback() }
     })
   },
+  //內容渲染
   setDetail(result)
   { this.setData({
     title: result.title,

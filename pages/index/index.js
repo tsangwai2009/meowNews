@@ -55,7 +55,13 @@ Page({
         this.setNews(result,code)
         this.setData({status: SUCCESS})
       },
-      fail() { this.setData({ status: NOTRECERIVED })}
+      fail() {
+        wx.showToast({
+          title: '獲取失敗TwT',
+          icon: 'none',
+          duration: 2000
+        })
+      }
       ,
       complete: () => { callback && callback() }//check function parameter exist
     })

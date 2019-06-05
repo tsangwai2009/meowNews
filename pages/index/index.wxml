@@ -1,14 +1,14 @@
 <!--pages/detail/detail.wxml-->
 
 <view class="swiper-tab"><!--選頁卡-->
-    <view  wx:for="{{tabs}}" class="swiper-tab-item {{currentTab==idx?'active':''}}" data-current="{{idx}}" bindtap="clickTab"  wx:key="*this" wx:for-index="idx" wx:for-item="tab">{{tab.kind}}</view>
+    <view  wx:for="{{tabs}}" class="swiper-tab-item {{currentTab==idx?'active':''}}" data-current="{{idx}}" bindtap="clickTab"  wx:key="this" wx:for-index="idx" wx:for-item="tab">{{tab.kind}}</view>
 </view>
 
 <swiper current="{{currentTab}}" duration="300"  bindchange="swiperTab" style="height: {{clientHeight?clientHeight+'px':'auto'}}; text-align: center;">
-    <block wx:for="{{tabs}}" wx:if="{{status==1}}">
-    <swiper-item style="visibility: {{(item.tab==currentTab)?'visible':'hidden'}}">
+    <view wx:if="{{status==1}}" wx:for="{{tabs}}" wx:key="unique">
+    <swiper-item style="visibility: {{(item.tab==currentTab)?'visible':'hidden'}}">    
       <scroll-view scroll-y style="height: {{clientHeight?clientHeight+'px':'auto'}}">
-        <view class="news-item" wx:for="{{newsItem}}" data-id="{{item.id}}" bindtap="newsDetail">
+        <view class="news-item" wx:for="{{newsItem}}" data-id="{{item.id}}" bindtap="newsDetail" wx:key="unique">
           <view class="news-wrapper">
             <view class="news-title">{{item.title}}</view> 
             <view class="news-content">
@@ -20,6 +20,6 @@
         </view>
       </scroll-view>
     </swiper-item>
-    </block>
+    </view>
 </swiper>
 
